@@ -1,0 +1,6 @@
+2.1.2 空白边叠加
+
+#复杂的语法
+.class .class1{} //表示同时有两种类选择器时 执行此css样式 顺序不区分先后
+ul li:last-child{} //ul li标签的最后一个元素执行此css样式 有先后顺序
+.active-li, .active-li:hover //active-li的类执行此css样式；同时active-li的hover动作也执行此动作
