@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+        *{margin: 0;padding: 0}
+        html, body{height: 100%}
+        #nav{float: left;width:5%;height:100%;background-color: antiquewhite}
+        #con{float: right;width: 95%;height:100%;background-color: aqua}
+        #welcome{text-align:center;top:500px;font-size:x-large;font-weight:bold;}
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('#con').html('<div id="welcome">Welcome!</div>');
+            //单击 a 链接，加载 a.html
+            $("#a1").click(function(){
+                $('#con').load('./a.html');
+            });
+            //单击 b 链接，加载 b.html
+            $("#a2").click(function(){
+                $('#con').load('./b.html');
+            });
+        })
+    </script>
+</head>
+<body>
+<ul id="nav">
+    <li><a href="#" id="a1">show a</a></li>
+    <li><a href="#" id="a2">show b</a></li>
+</ul>
+<div id="con"></div>
+</body>
+</html>

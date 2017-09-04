@@ -1,0 +1,183 @@
+<html>
+
+<style>
+#modal {
+    background: green;
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    display: none;
+    margin: auto;
+    left:0;
+    bottom:0;
+    top:0;
+    right:0;
+}
+#login {
+    position: absolute;
+    z-index:0;
+    background: red;
+    width: 400px;
+    height: 50px;
+    top:0px;
+    left:0px;
+}
+#shadow {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    opacity: 0.6;
+    position: absolute;
+    background: #63615a;
+    display: none;
+}
+#close {
+    color: black;
+    border: 0 0;
+}
+
+.side-nav-item {
+  display: block;
+  padding: 10px 15px 10px 15px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.item-title {
+  background-color: #F5F5F5;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.panel-heading {
+  margin-top: 5px;
+  padding: 0;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  border-color: #DDDDDD;
+}
+
+.item-body {
+  padding: 10px 15px 5px 15px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.item-second {
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.item-second a {
+  display: block;
+}
+
+.c {
+    background: black;
+}
+
+body {
+    padding: 0px 100px;
+}
+
+.body-content {
+     background: #CFCFCF
+}
+
+.top-menu {
+   padding: 30px 0px 0px 0px;
+}
+
+.index {
+    padding: 0px 80px 0px 50px;
+    font-size: x-large;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.sub-index {
+    padding: 0px 30px;
+    font-size: large;
+    font-weight: bold;
+    position: relative;
+    display: inline;
+}
+
+.top-menu-li {
+    display: inline-block;
+    padding: 0px 10px;
+}
+
+.top-hr {
+    border-color: black;
+    border-top: 3px solid black;
+}
+
+
+.sidebar-left {
+    position: relative;
+    display: inline-block;
+    float: left;
+    border-right: 3px solid black;
+    height: 200px;
+    padding: 0px 0px 0px 0px;
+}
+
+li, .left-menu {
+    font-size: medium;
+    font-family: "Microsoft Yahei", "微软雅黑";
+    padding: 5px 15px;
+    list-style-type: none;
+}
+
+</style>
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="../jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<body>
+
+<div class="body-content">
+<div class="top-menu">
+    <div class="index">
+    首页
+    </div>
+    <div class="sub-index">
+        <div class="top-menu-li">
+            <a href="#">Introduce</a>
+        </div>
+        <div class="top-menu-li">
+            <a href="#">Document</a>
+        </div>
+        <div class="top-menu-li">
+            <a href="#">Download</a>
+        </div>
+        <div class="top-menu-li">
+            <a href="#">Practice</a>
+        </div>
+    </div>
+</div>
+
+<hr class="top-hr" style="margin-bottom:0px"/>
+
+
+<div class="sidebar-left">
+    <ul style="padding: 0px">
+    <li class="left-menu"><a href="#">链接1</a></li>
+    <li class="left-menu"><a href="#">链接2</a></li>
+    <li class="left-menu"><a href="#">链接3</a></li>
+    <li class="left-menu"><a href="#">链接4</a></li>
+    </ul>
+</div>
+
+</div>
+<script type="text/javascript">
+</script>
+</body>
+</html>
