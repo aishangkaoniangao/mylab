@@ -8,6 +8,8 @@ font-family: #字体
 color:    #文本颜色 不是font-color
 background: #fa2f2f; #背景颜色
 text-align: center; #文字位置(居左，居中，居右)
+text-indent: 5em; #文字缩进
+更多：http://www.w3school.com.cn/css/css_text.asp
 
 #块相关
 padding: 上右下左
