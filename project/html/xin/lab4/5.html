@@ -1,5 +1,6 @@
 <html>
 
+<head>
 <style>
 #modal {
     background: green;
@@ -122,16 +123,25 @@ body {
     display: inline-block;
     float: left;
     border-right: 3px solid black;
-    height: 200px;
+    height: 400px;
+    width: 120px;
     padding: 0px 0px 0px 0px;
 }
 
 li, .left-menu {
     font-size: medium;
     font-family: "Microsoft Yahei", "微软雅黑";
-    padding: 5px 15px;
+    padding: 0px;
     list-style-type: none;
 }
+
+.collapse-ul {
+    padding: 0px 0px 0px 10px;
+}
+
+
+
+
 
 </style>
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
@@ -140,6 +150,29 @@ li, .left-menu {
 <script src="../jquery.min.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<style>
+a {
+    font-family: "Microsoft Yahei", "微软雅黑";
+    color: black;
+    text-align: center;
+}
+.menu-a {
+    padding: 5px 8px;
+    text-align: center;
+}
+.menu-a:hover {
+    background: #fa2f2f;
+    color: white;
+    border-radius: 3px;
+}
+.padding-li-a {
+    padding: 5px 0px;
+}
+
+</style>
+
+</head>
 
 <body>
 
@@ -169,10 +202,33 @@ li, .left-menu {
 
 <div class="sidebar-left">
     <ul style="padding: 0px">
-    <li class="left-menu"><a href="#">链接1</a></li>
-    <li class="left-menu"><a href="#">链接2</a></li>
-    <li class="left-menu"><a href="#">链接3</a></li>
-    <li class="left-menu"><a href="#">链接4</a></li>
+        <li class="left-menu">
+            <div class="menu-a padding-li-a">
+            <a href="#href-1" data-toggle="collapse">链接1</a>
+            </div>
+            <ul id="href-1" class="collapse collapse-ul">
+            <div class="menu-a"><li><a href="#">1.1</a></li></div>
+            <div class="menu-a"><li><a href="#">1.2</a></li></div>
+            <div class="menu-a"><li><a href="#">1.3</a></li></div>
+            </ul>
+        </li>
+    <li class="left-menu">
+            <div class="menu-a padding-li-a">
+            <a href="#">链接2</a>
+            </div>
+    </li>
+    <li class="left-menu">
+        <div class="menu-a padding-li-a">
+        <a href="#">链接3</a>
+        </div>
+    </li>
+
+    <li class="left-menu">
+        <div class="menu-a padding-li-a">
+        <a href="#">链接4</a>
+        </div>
+    </li>
+
     </ul>
 </div>
 
