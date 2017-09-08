@@ -3,15 +3,17 @@
 <head>
 <style>
 #modal {
-    background: green;
-    width: 150px;
-    height: 100px;
+    background: white 40%;
+    color: black;
+    border-style:solid;
+    border-color: black;
+    width: 550px;
+    height: 300px;
     position: absolute;
     display: none;
     margin: auto;
     left:0;
-    bottom:0;
-    top:0;
+    top:20%;
     right:0;
 }
 #login {
@@ -106,6 +108,11 @@ body {
     position: relative;
     display: inline;
 }
+.login-btn {
+    float: right;
+    padding: 0px 50px 0px 0px;
+    display: inline;
+}
 
 .top-menu-li {
     display: inline-block;
@@ -169,6 +176,9 @@ a {
 .padding-li-a {
     padding: 5px 0px;
 }
+.suggest-list:hover {
+    background: red;
+}
 
 </style>
 
@@ -195,10 +205,20 @@ a {
             <a href="#">Practice</a>
         </div>
     </div>
+    <div class="login-btn">
+        <button id="login-btn" class="btn btn-default" style="background-color:DimGray; color: white">登录</button>
+    </div>
+    <div class="user-info" style="display:none;float: right; padding: 0px 3em 0px 0px">
+        <div style="display:inline-block">
+        用户名：<a href="#" id="show-username">aa</a>
+        </div>
+        <div style="display:inline-block">
+        <a href="#" id="show-logout">退出</a>
+        </div>
+    </div>
 </div>
 
 <hr class="top-hr" style="margin-bottom:0px"/>
-
 
 <div class="sidebar-left">
     <ul style="padding: 0px">
@@ -228,12 +248,101 @@ a {
         <a href="#">链接4</a>
         </div>
     </li>
-
     </ul>
 </div>
-
 </div>
+
+<div>
+<div style="display: inline-block">
+<input type="text" id="search-text" placeholder="搜索关键词" />
+<div id="suggest-text" style="display:none; border: 1px solid gray;">
+<ul style="padding: 0 0 10px 0;margin:0px 0px 0px 0px;">
+    <li class="suggest-list" style="text-align:left;">a</li>
+    <li class="suggest-list">ab</li>
+    <li class="suggest-list">abc</li>
+</ul>
+</div>
+</div>
+<button class="btn" id="btn-search" style="vertical-align: top">搜索</button>
+<div style="">
+我要搜索
+</div>
+</div>
+
+<div id="modal" style="display: none">
+    <div>
+    <button id="close" class="close-login-btn" style="display:block; float:right">X</button>
+    </div>
+    <div style="display:block;position:relative; margin: 5em 0 2em 0">
+    <div style="padding: 5px 0px 5px 0px">
+        <div style="display: inline; width: 60px; float: left; text-align: right;">用户名：</div>
+        <input type="text" name="user" style="position:relative; left: 30px" />
+    </div>
+    <div style="padding: 5px 0px 5px 0px">
+        <div style="display: inline; width: 60px; float: left; text-align: right;">密码：</div>
+        <input type="text" name="password" style="position:relative; left: 30px"/>
+    </div>
+    </div>
+    <div style="padding:3px 0em 3px 7em;">
+    <button class="btn btn-primary" id="user-login" style="position:relative; display: block; text-align:center;">登录</btn>
+    </div>
+</div>
+
+<div id="data-cache" style="display:none">
+</div>
+
 <script type="text/javascript">
+$('#login-btn').click(function(){
+    $('#modal').css({"display": "block", "z-index": 1});
+});
+$('.close-login-btn').click(function(){
+    $('#modal').css({"display": "none"});
+});
+$('#user-login').click(function(){
+    console.log("user-login");
+    //添加cookie信息 file式的url地址不支持cookie信息 所以采用data-storage的方式来存储数据
+    var username = "helww";
+    $('#data-cache').data("username", username);
+    $('#show-username').html(username);
+
+    //把用户信息写入到登录按钮那里
+    $('.login-btn').css({"display":"none"});
+    $('.user-info').css({"display":"inline-block"});
+    $('#modal').css({"display":"none"});
+});
+
+$('#show-logout').click(function(){
+    $('#data-cache').removeData("username");
+    $('#show-username').html("");
+    $('.login-btn').css({"display":"inline-block"});
+    $('.user-info').css({"display":"none"});
+});
+$('#search-text').keyup(function(){
+    var q = $(this).val();
+    if (q=='a') {
+        $('#btn-search').trigger("click");
+    }
+    if (q.length==0) {
+        $('#suggest-text').hide();
+        console.log("empty search text");
+    }
+});
+//change需要检测input框内容改变并且失去焦点时才触发
+$('#search-text').change(function(){
+});
+//这个函数需要鼠标飘到输入框外边才可以触发
+$('#search-text').blur(function(){
+});
+function setCookie(c_name, value, expiredays){
+　　var exdate = new Date();
+　　exdate.setDate(exdate.getDate() + expiredays);
+　　document.cookie=c_name+ "=" + escape(value) + ((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+}
+$('#btn-search').click(function(){
+    var w = $('#search-text').parent().width();
+    $('#suggest-text').css({"display":"block", "position":"absolute", "background":"white", "z-index":"2", "width":w});
+   
+});
 </script>
 </body>
 </html>
