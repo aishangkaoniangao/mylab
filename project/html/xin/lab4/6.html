@@ -1,0 +1,285 @@
+<html>
+
+<head>
+<style>
+#modal {
+    background: white 40%;
+    color: black;
+    border-style:solid;
+    border-color: black;
+    width: 550px;
+    height: 300px;
+    position: absolute;
+    display: none;
+    margin: auto;
+    left:0;
+    top:20%;
+    right:0;
+}
+#login {
+    position: absolute;
+    z-index:0;
+    background: red;
+    width: 400px;
+    height: 50px;
+    top:0px;
+    left:0px;
+}
+#shadow {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    opacity: 0.6;
+    position: absolute;
+    background: #63615a;
+    display: none;
+}
+#close {
+    color: black;
+    border: 0 0;
+}
+
+.side-nav-item {
+  display: block;
+  padding: 10px 15px 10px 15px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.item-title {
+  background-color: #F5F5F5;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.panel-heading {
+  margin-top: 5px;
+  padding: 0;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  border-color: #DDDDDD;
+}
+
+.item-body {
+  padding: 10px 15px 5px 15px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.item-second {
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.item-second a {
+  display: block;
+}
+
+.c {
+    background: black;
+}
+
+.left {
+    float: left;
+    width: 10%;
+    height: 100%;
+    display: inline-block;
+}
+
+.body-content {
+    display: inline-block;
+    background: #CFCFCF;
+}
+
+.index {
+    padding: 0px 80px 0px 50px;
+    font-size: x-large;
+    font-weight: bold;
+    display: inline;
+}
+
+.sub-index {
+    font-size: large;
+    font-weight: bold;
+    height: 100px;
+    width: 700px;
+}
+.login-btn {
+    float: right;
+    margin: 0px 20px 0px 0px;
+    display: inline;
+}
+
+.top-menu-li {
+    width: 120px;
+    height: 34px;
+    display: inline-block;
+    margin: 0px 10px;
+}
+
+.top-hr {
+    border-color: black;
+    border-top: 3px solid black;
+}
+
+.sidebar-left {
+    position: relative;
+    display: inline-block;
+    float: left;
+    border-right: 3px solid black;
+    height: 400px;
+    width: 120px;
+    padding: 0px 0px 0px 0px;
+}
+
+li, .left-menu {
+    font-size: medium;
+    font-family: "Microsoft Yahei", "微软雅黑";
+    padding: 0px;
+    list-style-type: none;
+}
+
+.collapse-ul {
+    padding: 0px 0px 0px 10px;
+}
+
+
+
+
+
+</style>
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="../jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<style>
+a {
+    font-family: "Microsoft Yahei", "微软雅黑";
+    color: black;
+    text-align: center;
+}
+.menu-a {
+    padding: 5px 8px;
+    text-align: center;
+}
+.menu-a:hover {
+    background: #fa2f2f;
+    color: white;
+    border-radius: 3px;
+}
+.padding-li-a {
+    padding: 5px 0px;
+}
+.suggest-list:hover {
+    background: red;
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="body-content">
+        <div class="sub-index" style="display: block;">
+            <div class="top-menu-li">
+                <a href="#">Introduce</a>
+            </div>
+            <div class="top-menu-li">
+                <a href="#">Document</a>
+            </div>
+            <div class="top-menu-li">
+                <a href="#">Download</a>
+            </div>
+            <div class="top-menu-li">
+                <a href="#">Practice</a>
+            </div>
+        </div>
+</div>
+
+<div id="modal" style="display: none">
+    <div>
+    <button id="close" class="close-login-btn" style="display:block; float:right">X</button>
+    </div>
+    <div style="display:block;position:relative; margin: 5em 0 2em 0">
+    <div style="padding: 5px 0px 5px 0px">
+        <div style="display: inline; width: 60px; float: left; text-align: right;">用户名：</div>
+        <input type="text" name="user" style="position:relative; left: 30px" />
+    </div>
+    <div style="padding: 5px 0px 5px 0px">
+        <div style="display: inline; width: 60px; float: left; text-align: right;">密码：</div>
+        <input type="text" name="password" style="position:relative; left: 30px"/>
+    </div>
+    </div>
+    <div style="padding:3px 0em 3px 7em;">
+    <button class="btn btn-primary" id="user-login" style="position:relative; display: block; text-align:center;">登录</btn>
+    </div>
+</div>
+
+<div id="data-cache" style="display:none">
+</div>
+
+<script type="text/javascript">
+$('#login-btn').click(function(){
+    $('#modal').css({"display": "block", "z-index": 1});
+});
+$('.close-login-btn').click(function(){
+    $('#modal').css({"display": "none"});
+});
+$('#user-login').click(function(){
+    console.log("user-login");
+    //添加cookie信息 file式的url地址不支持cookie信息 所以采用data-storage的方式来存储数据
+    var username = "helww";
+    $('#data-cache').data("username", username);
+    $('#show-username').html(username);
+
+    //把用户信息写入到登录按钮那里
+    $('.login-btn').css({"display":"none"});
+    $('.user-info').css({"display":"inline-block"});
+    $('#modal').css({"display":"none"});
+});
+
+$('#show-logout').click(function(){
+    $('#data-cache').removeData("username");
+    $('#show-username').html("");
+    $('.login-btn').css({"display":"inline-block"});
+    $('.user-info').css({"display":"none"});
+});
+$('#search-text').keyup(function(){
+    var q = $(this).val();
+    if (q=='a') {
+        $('#btn-search').trigger("click");
+    }
+    if (q.length==0) {
+        $('#suggest-text').hide();
+        console.log("empty search text");
+    }
+});
+//change需要检测input框内容改变并且失去焦点时才触发
+$('#search-text').change(function(){
+});
+//这个函数需要鼠标飘到输入框外边才可以触发
+$('#search-text').blur(function(){
+});
+function setCookie(c_name, value, expiredays){
+　　var exdate = new Date();
+　　exdate.setDate(exdate.getDate() + expiredays);
+　　document.cookie=c_name+ "=" + escape(value) + ((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+}
+$('#btn-search').click(function(){
+    var w = $('#search-text').parent().width();
+    $('#suggest-text').css({"display":"block", "position":"absolute", "background":"white", "z-index":"2", "width":w});
+   
+});
+</script>
+</body>
+</html>

@@ -28,6 +28,11 @@ vertical-align: top; #两个div顶部对齐使用该方案
 #div相关特效
 border-radius: 3px; #边角是圆角矩形，矩形半径是3px
 
+overflow-x: 横向的块展示溢出处理 visible, hidden, scroll等
+应用于块级元素，替换元素，表单元格 (参考：http://www.cnblogs.com/xiaohuochai/p/5289653.html)
+
+overflow-y:纵向的块展示溢出处理
+
 
 [js-css网址导航]
 
