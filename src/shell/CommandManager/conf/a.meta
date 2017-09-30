@@ -1,0 +1,4 @@
+#filter-test
+run_num=`ps aux | grep filter.php | grep -v grep | wc -l`
+CMD="php ${PROJECT_ROOT}/filter.php"
+PROCESS_NUM=5
