@@ -19,7 +19,7 @@ It is a music player. It implements parts of features, which contains(add, delet
 + List all music;
 
 # Output sample
-<code>
+```
 ***@localhost:~/go/player$ ./main
 L(list music); P <index>(playing); A <singer>:<song name>; D <index>(deleting music); X(exit the program)
 Please input:
@@ -52,4 +52,4 @@ index: 0 song-name: Possible
 Please input:
 X
 It is over, and program exits!
-</code>
+```
